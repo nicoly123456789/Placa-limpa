@@ -1,0 +1,9 @@
+from django.shortcuts import render,redirect,get_object_or_404
+from .models import *
+# from .forms import LivroForms
+from django.views import View
+from django.contrib import messages
+
+class IndexView(View):
+    def get(self, request):
+        return render(request, 'index.html')
