@@ -15,7 +15,7 @@ class Policial(models.Model):
     setor = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.nome
+        return self.matricula
 
     class Meta:
         verbose_name = "Policial"
@@ -27,7 +27,8 @@ class Evidencia(models.Model):
     dataUpload = models.DateField()
 
     def __str__(self):
-        return self.nome
+        return self.descricao
+    
 
     class Meta:
         verbose_name = "Evidencia"
@@ -69,7 +70,7 @@ class Denuncia(models.Model):
     evidencia = models.ForeignKey(Evidencia, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nome
+        return self.descricao
 
     class Meta:
         verbose_name = "Denuncia"
@@ -83,7 +84,7 @@ class Penalidade(models.Model):
     tipo_infracao = models.ForeignKey(TipoInfracao, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nome
+        return f"{self.infrator} - {self.tipo_infracao}"
 
     class Meta:
         verbose_name = "Penalidade"
@@ -98,7 +99,7 @@ class VeiculoConfiscado(models.Model):
     tem_documento = models.CharField(max_length=400)
 
     def __str__(self):
-        return self.nome
+        return self.tipo
 
     class Meta:
         verbose_name = "VeiculoConfiscado"
@@ -111,7 +112,7 @@ class ResultadoInvestigacao(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return self.descricao
 
     class Meta:
         verbose_name = "ResultadoInvestigacao"
@@ -124,7 +125,7 @@ class Historico(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return self.descricao
 
     class Meta:
         verbose_name = "Historico"
@@ -136,7 +137,7 @@ class Investigacao(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return self.descricao
 
     class Meta:
         verbose_name = "Investigacao"
@@ -150,7 +151,7 @@ class RelatorioPorRua(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return self.investigacoes_concluidas
 
     class Meta:
         verbose_name = "RelatorioPorRua"
@@ -163,7 +164,7 @@ class RelatorioEstatistico(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return self.infracao_mais_comum
 
     class Meta:
         verbose_name = "RelatorioEstatistico"
@@ -176,7 +177,7 @@ class Login(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return self.email
 
     class Meta:
         verbose_name = "Login"
