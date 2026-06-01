@@ -169,16 +169,3 @@ class RelatorioEstatistico(models.Model):
     class Meta:
         verbose_name = "RelatorioEstatistico"
         verbose_name_plural = "RelatoriosEstatisticos"
-
-class Login(models.Model):
-    email = models.EmailField()
-    senha = models.CharField(max_length=200)
-    
-
-
-    def __str__(self):
-        return self.email
-
-    class Meta:
-        verbose_name = "Login"
-        verbose_name_plural = "Logins"

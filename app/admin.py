@@ -14,5 +14,4 @@ admin.site.register(Historico)
 admin.site.register(Investigacao)
 admin.site.register(RelatorioPorRua)
 admin.site.register(RelatorioEstatistico)
-admin.site.register(Login)
 # Register your models here.
