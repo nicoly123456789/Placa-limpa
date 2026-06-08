@@ -85,63 +85,84 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-
+        
+            {% if is_policial %}
             <li class="nav-item">
                 <a class="nav-link" href="/usuario/">Usuario</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/denuncia/">Denuncia</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial %}
             <li class="nav-item">
                 <a class="nav-link" href="/rua/">Rua</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/penalidade/">Penalidade</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial %}
             <li class="nav-item">
                 <a class="nav-link" href="/veiculosconfiscados/">Veiculo Confiscado</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/evidencia/">Evidencia</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/resultado_investigacao/">Resultado Investigação</a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/historico/">Historico</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/investigacao/">Investigacao</a>
-            </li>
-
+            {% endif %}
+        
+            {% if is_policial %}
             <li class="nav-item">
                 <a class="nav-link" href="/policial/">Policiais</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/tipo_infracao/">Tipo Infracao</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/relatorio_por_rua/">Relatorio por Rua</a>
             </li>
-
+            {% endif %}
+        
+            {% if is_policial or is_civil %}
             <li class="nav-item">
                 <a class="nav-link" href="/relatorio_estatistico/">Relatorio Estatistico</a>
             </li>
+            {% endif %}
+
+            {% if is_policial %}
+            <li class="nav-item">
+                <a class="nav-link" href="/historico/">Histórico</a>
+            </li>
+            {% endif %}
+        
         </ul>
         <ul class="navbar-nav">
 

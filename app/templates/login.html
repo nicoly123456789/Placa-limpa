@@ -1,24 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            width: 320px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 5px rgba(37,99,235,0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #00050f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .erro {
+            color: red;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>Login</h2>
+<div class="login-box">
 
-{% if erro %}
-<p style="color:red">{{ erro }}</p>
-{% endif %}
+    <h2>Login</h2>
 
-<form method="POST">
-    {% csrf_token %}
+    {% if erro %}
+    <p class="erro">{{ erro }}</p>
+    {% endif %}
 
-    <input type="text" name="username" placeholder="Usuário"><br><br>
-    <input type="password" name="password" placeholder="Senha"><br><br>
+    <form method="POST">
+        {% csrf_token %}
 
-    <button type="submit">Entrar</button>
-</form>
+        <input type="text" name="username" placeholder="Usuário">
+        <input type="password" name="password" placeholder="Senha">
+
+        <button type="submit">Entrar</button>
+    </form>
+
+</div>
 
 </body>
 </html>
